@@ -1,44 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand&display=swap');
 
 .image-container {
-    position: relative; /* Necessary for positioning text */
-    display: inline-block;
-    width: 100%; /* Full-width container */
-    z-index: 1;
-    margin: 1;
-    padding:0;
-    
-  }
+    position: relative;
+    display:flex;
+    height: auto; /* Adjust height automatically */
+    justify-content: center;
+    background-color:#EDE5CA;
+}
 
-  /* Style for the image */
-  .image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+.image-container img {
+    max-width: 100%; /* Keeps it smaller */
+    height: auto; /* Prevents stretching */
+}
 
   /* Text container (to stack text) */
   .image-text {
     position: absolute;
+    top: 50%;
     left: 50%;
-    top: 53%;
     transform: translate(-50%, -50%);
+    width: 90%; /* Keeps text within the image boundaries */
+    max-width: 600px; /* Prevents it from getting too wide */
     text-align: center;
-    color: rgb(255, 255, 255);
-    z-index: 2; /* Ensures text is above the image */
-  }
+    color: white;
+    padding: 1rem; /* Adds a bit of spacing around the text */
+    box-sizing: border-box;
+}
 
   /* Different styles for stacked text */
   .line-1 {
     font-family: 'Quicksand', cursive;
-    font-size: 1.5rem;
     margin-bottom: 1.5rem;
     
   }
 
   .line-2 {
     font-family: 'Great Vibes', 'bree serif', 'cursive';
-    font-size: 3.3rem;
     font-style: italic;
     margin: 0;
     font-stretch: condensed;
@@ -46,7 +43,6 @@
 
   .line-3 {
     font-family: 'Courier New', monospace;
-    font-size: 1.3rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 1.1rem; /* Add spacing for the bottom line */
@@ -55,9 +51,9 @@
 
   /* Optional: Add a text shadow for better readability */
   .image-text p {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-
+    font-size: 1.2rem; /* Scales with screen size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Improves readability */
+}
   /* Basic Reset */
   * {
     margin: 0;
@@ -78,7 +74,7 @@
 
   .header-container h1 {
     font-family: 'Great Vibes', 'bree serif', 'cursive';
-    font-size: 3rem;
+    font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
@@ -210,6 +206,7 @@
     border-radius: 12px;
     box-sizing: border-box;
     padding: 10px;
+    margin: 20px;
 }
 
     .things {
@@ -227,6 +224,19 @@
         letter-spacing: 2px;
         
 
+    }
+
+    .things p {
+        font-size: 1.2rem;
+        color: #000000;
+        line-height: 1.9rem;
+        width:auto;
+        font-family: Quicksand, sans-serif;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-sizing: border-box;
+        padding: 10px;  
+        margin: 20px;
     }
 
     .faq {
@@ -277,6 +287,12 @@
         width: 100%;
     }
 
+    .block-link {
+        display: block;
+        text-decoration: none;
+        color: inherit; /* Keeps text color normal */
+    }
+
   @media (min-width: 768px) {
     .nav-menu {
       position: static;
@@ -323,6 +339,10 @@
   
     .overlay {
       display: none; /* Remove the overlay on desktop */
+    }
+
+    .image-text p {
+        font-size: 2rem; /* Increase font size on small screens */
     }
 }
 
@@ -375,7 +395,7 @@
   
   @media (max-width: 768px) {
     .scroll-item {
-      width: 180px; /* Adjusts size for smaller screens */
+      width: 50vh; /* Adjusts size for smaller screens */
     }
   }
 
